@@ -33,7 +33,6 @@
             background: var(--bg-color);
             color: var(--text-color);
             transition: background 0.3s, color 0.3s;
-            touch-action: none;
         }
 
         .container {
@@ -242,14 +241,13 @@
         </div>
         <div class="links">
             <a href="https://web.facebook.com/p/Sanghabodhi-College-Media-Unit-100088031154763/?_rdc=1&_rdr" target="_blank" aria-label="Facebook">Facebook</a>
-            <a href="https://www.tiktok.com/@bodhianzpulse" target="_blank" aria-label="Tiktok">TikTok</a>
+            <a href="https://www.tiktok.com/@bodhianzpulse" target="_blank" aria-label="TikTok">TikTok</a>
             <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram">Instagram</a>
             <a href="https://www.youtube.com/@SanghaboPahasara" target="_blank" aria-label="YouTube">YouTube</a>
         </div>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Handle link hover effects
             const links = document.querySelectorAll('.links a');
             links.forEach(link => {
                 link.addEventListener('mouseover', () => {
@@ -297,6 +295,20 @@
                     }
                 });
             });
+
+            // Adjust container position on resize
+            window.addEventListener('resize', () => {
+                const container = document.querySelector('.container');
+                container.style.top = '50%';
+                container.style.left = '50%';
+                container.style.transform = 'translate(-50%, -50%)';
+            });
+
+            // Initial container position
+            const container = document.querySelector('.container');
+            container.style.top = '50%';
+            container.style.left = '50%';
+            container.style.transform = 'translate(-50%, -50%)';
         });
     </script>
 </body>
